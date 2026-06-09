@@ -3,96 +3,124 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>کارت ویزیت دیجیتال</title>
+  <title>کارت ویزیت دیجیتال - [نام شما]</title>
   <style>
+    /* فونت‌های فارسی --اگر دوست دارید فونت خاصی استفاده کنید، آدرس فونت را از اینترنت بگیرید و اینجا اضافه کنید */
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+
     body {
       margin: 0;
-      font-family: Tahoma, sans-serif;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: white;
+      font-family: 'Vazirmatn', sans-serif; /* استفاده از فونت وزیر */
+      background: linear-gradient(135deg, #1e3a8a, #0c4a6e); /* تم آبی تیره */
+      color: #e2e8f0; /* رنگ متن روشن */
       display: flex;
       min-height: 100vh;
       align-items: center;
       justify-content: center;
       padding: 20px;
+      overflow-x: hidden; /* جلوگیری از اسکرول افقی */
     }
 
     .card {
       width: 100%;
-      max-width: 420px;
+      max-width: 450px;
       background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(18px);
       border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 24px;
-      padding: 28px 20px;
+      border-radius: 28px; /* گوشه‌های گردتر */
+      padding: 35px 25px; /* فضای داخلی بیشتر */
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.35); /* سایه بیشتر */
+      animation: fadeIn 1s ease-out; /* انیمیشن ورود */
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .avatar {
-      width: 110px;
-      height: 110px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #fff;
-      margin-bottom: 16px;
+      border: 5px solid #fff; /* حاشیه سفید دور عکس */
+      margin-bottom: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4); /* سایه برای عکس */
     }
 
     h1 {
-      margin: 8px 0 6px;
-      font-size: 28px;
+      margin: 10px 0 8px;
+      font-size: 32px; /* فونت عنوان بزرگتر */
+      color: #ffffff; /* رنگ سفید خالص برای عنوان */
     }
 
     .subtitle {
-      margin: 0 0 18px;
-      color: #cbd5e1;
-      font-size: 15px;
+      margin: 0 0 25px;
+      color: #94a3b8; /* رنگ خاکستری روشن برای عنوان فرعی */
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap; /* اجازه به پیچیدن لینک‌ها */
+      justify-content: center;
+      gap: 15px; /* فاصله بین لینک‌ها */
+      margin-bottom: 25px;
     }
 
     .btn {
-      display: block;
+      display: inline-flex; /* برای هم‌ترازی آیکون و متن */
+      align-items: center;
+      justify-content: center;
       text-decoration: none;
-      color: white;
-      background: #2563eb;
-      padding: 14px 16px;
+      color: white !important; /* رنگ سفید برای لینک‌ها */
+      padding: 12px 25px;
       border-radius: 14px;
-      margin: 10px 0;
       font-size: 16px;
-      transition: 0.2s ease;
+      font-weight: 700; /* فونت ضخیم‌تر */
+      transition: all 0.3s ease;
+      min-width: 180px; /* حداقل عرض برای دکمه‌ها */
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
 
     .btn:hover {
-      transform: translateY(-2px);
-      background: #1d4ed8;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
 
-    .btn.instagram { background: #e1306c; }
-    .btn.instagram:hover { background: #c0265a; }
+    /* استایل اختصاصی برای هر لینک */
+    .btn.instagram { background-color: #e1306c; }
+    .btn.instagram:hover { background-color: #c0265a; }
 
-    .btn.eita { background: #0ea5e9; }
-    .btn.eita:hover { background: #0284c7; }
+    .btn.eita { background-color: #0ea5e9; }
+    .btn.eita:hover { background-color: #0284c7; }
 
-    .btn.phone { background: #16a34a; }
-    .btn.phone:hover { background: #15803d; }
+    .btn.phone { background-color: #22c55e; } /* سبز روشن */
+    .btn.phone:hover { background-color: #16a34a; }
+
+    /* اگر لینک دیگری دارید */
+    .btn.linkedin { background-color: #0a66c2; }
+    .btn.linkedin:hover { background-color: #0e4a89; }
 
     .footer {
-      margin-top: 18px;
+      margin-top: 20px;
       font-size: 13px;
-      color: #94a3b8;
+      color: #a0aec0; /* رنگ خاکستری ملایم‌تر */
+      opacity: 0.8;
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <img class="avatar" src="https://via.placeholder.com/300" alt="Profile Photo" />
+    <!-- عکس پروفایل شما -- جایگزین کنید -->
+    <img class="avatar" src="https://via.placeholder.com/300/FFFFFF/000000?text=Your+Photo" alt="عکس پروفایل" />
+
+    <!-- نام شما -- جایگزین کنید -->
     <h1>نام شما</h1>
-    <p class="subtitle">عنوان شغلی یا توضیح کوتاه شما</p>
 
-    <a class="btn instagram" href="https://instagram.com/" target="_blank">اینستاگرام</a>
-    <a class="btn eita" href="https://eitaa.com/" target="_blank">ایتا</a>
-    <a class="btn phone" href="tel:+989000000000">تماس</a>
+    <!-- عنوان شغلی یا توضیح کوتاه -- جایگزین کنید -->
+    <p class="subtitle">اینجا عنوان شغلی یا یک توضیح کوتاه درباره خودتان بنویسید.</p>
 
-    <p class="footer">برای ارتباط سریع از لینک‌های بالا استفاده کنید</p>
-  </div>
-</body>
-</html>
+    <div class="social-links">
