@@ -1,126 +1,67 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>کارت ویزیت دیجیتال - [نام شما]</title>
-  <style>
-    /* فونت‌های فارسی --اگر دوست دارید فونت خاصی استفاده کنید، آدرس فونت را از اینترنت بگیرید و اینجا اضافه کنید */
-    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تکنولوژی دیبا</title>
+    <style>
+        /* پس‌زمینه خاکستری روشن */
+        body { 
+            font-family: 'Tahoma', sans-serif; 
+            text-align: center; 
+            background-color: #f0f2f5; 
+            padding: 20px;
+            margin: 0;
+        }
+        
+        /* کارت سفید وسط صفحه */
+        .container { 
+            max-width: 400px; 
+            margin: auto; 
+            background: #ffffff; 
+            padding: 25px; 
+            border-radius: 20px; 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05); 
+        }
 
-    body {
-      margin: 0;
-      font-family: 'Vazirmatn', sans-serif; /* استفاده از فونت وزیر */
-      background: linear-gradient(135deg, #1e3a8a, #0c4a6e); /* تم آبی تیره */
-      color: #e2e8f0; /* رنگ متن روشن */
-      display: flex;
-      min-height: 100vh;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      overflow-x: hidden; /* جلوگیری از اسکرول افقی */
-    }
+        h1 { color: #333; font-size: 22px; margin-bottom: 10px; }
+        p { color: #666; margin-bottom: 25px; }
 
-    .card {
-      width: 100%;
-      max-width: 450px;
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(18px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 28px; /* گوشه‌های گردتر */
-      padding: 35px 25px; /* فضای داخلی بیشتر */
-      text-align: center;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.35); /* سایه بیشتر */
-      animation: fadeIn 1s ease-out; /* انیمیشن ورود */
-    }
+        .btn { 
+            display: block; 
+            background: #007bff; 
+            color: white; 
+            padding: 15px; 
+            margin: 12px 0; 
+            border-radius: 12px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            transition: 0.3s;
+        }
+        .btn:hover { background: #0056b3; } /* کمی تغییر رنگ هنگام لمس */
+        
+        .btn-insta { background: #E1306C; }
+        .btn-tel { background: #0088cc; }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid #fff; /* حاشیه سفید دور عکس */
-      margin-bottom: 20px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.4); /* سایه برای عکس */
-    }
-
-    h1 {
-      margin: 10px 0 8px;
-      font-size: 32px; /* فونت عنوان بزرگتر */
-      color: #ffffff; /* رنگ سفید خالص برای عنوان */
-    }
-
-    .subtitle {
-      margin: 0 0 25px;
-      color: #94a3b8; /* رنگ خاکستری روشن برای عنوان فرعی */
-      font-size: 17px;
-      line-height: 1.5;
-    }
-
-    .social-links {
-      display: flex;
-      flex-wrap: wrap; /* اجازه به پیچیدن لینک‌ها */
-      justify-content: center;
-      gap: 15px; /* فاصله بین لینک‌ها */
-      margin-bottom: 25px;
-    }
-
-    .btn {
-      display: inline-flex; /* برای هم‌ترازی آیکون و متن */
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      color: white !important; /* رنگ سفید برای لینک‌ها */
-      padding: 12px 25px;
-      border-radius: 14px;
-      font-size: 16px;
-      font-weight: 700; /* فونت ضخیم‌تر */
-      transition: all 0.3s ease;
-      min-width: 180px; /* حداقل عرض برای دکمه‌ها */
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    }
-
-    /* استایل اختصاصی برای هر لینک */
-    .btn.instagram { background-color: #e1306c; }
-    .btn.instagram:hover { background-color: #c0265a; }
-
-    .btn.eita { background-color: #0ea5e9; }
-    .btn.eita:hover { background-color: #0284c7; }
-
-    .btn.phone { background-color: #22c55e; } /* سبز روشن */
-    .btn.phone:hover { background-color: #16a34a; }
-
-    /* اگر لینک دیگری دارید */
-    .btn.linkedin { background-color: #0a66c2; }
-    .btn.linkedin:hover { background-color: #0e4a89; }
-
-    .footer {
-      margin-top: 20px;
-      font-size: 13px;
-      color: #a0aec0; /* رنگ خاکستری ملایم‌تر */
-      opacity: 0.8;
-    }
-  </style>
+        h3 { color: #444; margin-top: 30px; font-size: 18px; }
+        
+        iframe { width: 100%; border-radius: 15px; margin-top: 10px; border: 1px solid #ddd; }
+    </style>
 </head>
 <body>
-  <div class="card">
-    <!-- عکس پروفایل شما -- جایگزین کنید -->
-    <img class="avatar" src="https://via.placeholder.com/300/FFFFFF/000000?text=Your+Photo" alt="عکس پروفایل" />
 
-    <!-- نام شما -- جایگزین کنید -->
-    <h1>نام شما</h1>
+<div class="container">
+    <h1>به تکنولوژی دیبا خوش‌آمدید</h1>
+    <p>خدمات تخصصی تعمیرات وفروش</p>
 
-    <!-- عنوان شغلی یا توضیح کوتاه -- جایگزین کنید -->
-    <p class="subtitle">اینجا عنوان شغلی یا یک توضیح کوتاه درباره خودتان بنویسید.</p>
+    <a href="tel:09134555175" class="btn">تماس با ما</a>
+    <a href="https://instagram.com/your_id" class="btn btn-insta">اینستاگرام ما</a>
+    <a href="https://t.me/mr_fattahi98" class="btn btn-tel">تلگرام ما</a>
 
-    <div class="social-links">
+    <h3>موقعیت ما روی نقشه:</h3>
+    <!-- کد نقشه گوگل را اینجا جایگزین کن -->
+    <iframe src="https://maps.app.goo.gl/3ZZDKYFM3UhhKM4Q7?g_st=ac" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+</body>
+</html>
